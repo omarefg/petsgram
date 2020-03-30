@@ -1,0 +1,20 @@
+{
+  "name": "petsgram",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarefg/petsgram.git"
+  },
+  "keywords": [],
+  "author": "Omar Flores Grimontt <dev@omarefg.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarefg/petsgram/issues"
+  },
+  "homepage": "https://github.com/omarefg/petsgram#readme"
+}
