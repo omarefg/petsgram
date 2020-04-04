@@ -32,7 +32,11 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "graphql": "^15.0.0",
+    "intersection-observer": "^0.7.0",
     "react": "^16.13.1",
+    "react-apollo": "^3.1.4",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
     "styled-components": "^5.0.1"
@@ -41,15 +45,5 @@
     "ignore": [
       "/api/**"
     ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/standard/eslintrc.json"
-    ],
-    "rules": {
-      "indent": [2, 4],
-      "react/jsx-indent": [2, 4],
-      "react/jsx-indent-props": [2, 4]
-    }
   }
 }
