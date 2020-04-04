@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Category } from '../Category'
+import Category from '../Category'
 import { List, Item } from './styles'
 
 function useCategoriesData () {
@@ -17,7 +17,7 @@ function useCategoriesData () {
     return { categories, loading }
 }
 
-export const ListOfCategories = () => {
+const ListOfCategories = () => {
     const { categories, loading } = useCategoriesData()
     const [showFixed, setShowFixed] = useState(false)
 
@@ -54,3 +54,5 @@ export const ListOfCategories = () => {
         </>
     )
 }
+
+export default ListOfCategories

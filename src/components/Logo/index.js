@@ -1,7 +1,7 @@
 import React from 'react'
 import { Svg } from './styles'
 
-export const Logo = () => {
+const Logo = () => {
     return (
         <Svg
             xmlns='http://www.w3.org/2000/svg'
@@ -49,3 +49,5 @@ export const Logo = () => {
         </Svg>
     )
 }
+
+export default Logo
