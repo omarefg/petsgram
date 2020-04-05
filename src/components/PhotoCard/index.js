@@ -1,30 +1,45 @@
 import React from 'react'
-import { ImgWrapper, Img, Button, Article } from './styles'
-import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
-import useLocalStorage from '../../hooks/useLocalStorage'
+import { ImgWrapper, Img, Article } from './styles'
 import useNearScreen from '../../hooks/useNearScreen'
+import FavButton from '../FavButton'
+import ToggleLikeMutation from '../../containers/ToggleLikeMutation'
+
+import { Link } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png'
 
-const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
-    const key = `like-${id}`
-    const [liked, setLiked] = useLocalStorage(key, false)
+const PhotoCard = ({ id, likes = 0, liked, src = DEFAULT_IMAGE }) => {
     const [show, ref] = useNearScreen()
-
-    const Icon = liked ? MdFavorite : MdFavoriteBorder
 
     return (
         <Article ref={ref}>
             {show && (
                 <>
-                    <a href={`/detail/${id}`}>
+                    <Link to={`/detail/${id}`}>
                         <ImgWrapper>
                             <Img src={src} />
                         </ImgWrapper>
-                    </a>
-                    <Button onClick={() => setLiked(!liked)}>
-                        <Icon size='32px' /> {likes} likes!
-                    </Button>
+                    </Link>
+                    <ToggleLikeMutation>
+                        {(toggleLike) => {
+                            const favClickHandler = () => {
+                                toggleLike({
+                                    variables: {
+                                        input: {
+                                            id
+                                        }
+                                    }
+                                })
+                            }
+                            return (
+                                <FavButton
+                                    liked={liked}
+                                    likes={likes}
+                                    onClick={favClickHandler}
+                                />
+                            )
+                        }}
+                    </ToggleLikeMutation>
                 </>
             )}
         </Article>

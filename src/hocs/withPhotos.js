@@ -1,7 +1,7 @@
 import { graphql } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
-export default graphql(gql`
+const GET_PHOTOS = gql`
     query getPhotos($categoryId: ID) {
         photos(categoryId: $categoryId) {
             id
@@ -12,4 +12,6 @@ export default graphql(gql`
             liked
         }
     }
-`)
+`
+
+export default graphql(GET_PHOTOS)

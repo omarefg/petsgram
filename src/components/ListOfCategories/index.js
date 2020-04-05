@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import Category from '../Category'
 import { List, Item } from './styles'
 
@@ -39,9 +39,12 @@ const ListOfCategories = () => {
                 <Item key='loading'>
                     <Category />
                 </Item>
-            ) : (categories.map(({ id, ...category }) => (
-                <Item key={id}>
-                    <Category {...category} />
+            ) : (categories.map((category) => (
+                <Item key={category.id}>
+                    <Category
+                        {...category}
+                        path={`/pet/${category.id}`}
+                    />
                 </Item>
             )))}
         </List>
@@ -55,4 +58,4 @@ const ListOfCategories = () => {
     )
 }
 
-export default ListOfCategories
+export default memo(ListOfCategories)
