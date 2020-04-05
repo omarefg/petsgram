@@ -2,6 +2,12 @@
     "extends": [
         "./node_modules/standard/eslintrc.json"
       ],
+      "globals": {
+        "describe": true,
+        "it": true,
+        "expect": true,
+        "cy": true
+      },
       "rules": {
         "indent": [2, 4],
         "react/jsx-indent": [2, 4],

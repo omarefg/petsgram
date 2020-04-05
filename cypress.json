@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://petsgram.now.sh",
+    "chromeWebSecurity": false,
+    "viewportWidth": 500,
+    "viewportHeight": 800
+}
